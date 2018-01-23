@@ -1,0 +1,20 @@
+1、查找源码
+apt-cache search linux-source
+2、下载源码
+apt-get install linux-source-x.xx.xx
+3、源码路径
+/usr/src/linux-source-x.xx.xx.tar.bz2
+4、解压源码
+cd /usr/src
+tar jxvf linux-source-x.xx.xx.tar.bz2
+5、编译配置
+make oldconfig
+6、编译内核
+make bzImage
+7、编译模块
+make moudules
+8、安装模块
+make modules_install
+9、内核树路径
+/lib/modules/linux-x.xx.xx-generic
+
