@@ -1,0 +1,1 @@
+cmd_/home/sepro/MyCode/Driver/CharDev/CharDevBasic/FirstCharDev.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/sepro/MyCode/Driver/CharDev/CharDevBasic/FirstCharDev.ko /home/sepro/MyCode/Driver/CharDev/CharDevBasic/FirstCharDev.o /home/sepro/MyCode/Driver/CharDev/CharDevBasic/FirstCharDev.mod.o ;  true
