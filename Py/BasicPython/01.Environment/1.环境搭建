@@ -1,0 +1,19 @@
+1、环境搭建
+
+安装python3
+sudo apt-get install python3
+
+安装pip3
+sudo apt-get install python3-pip
+
+升级pip3
+pip3 install --upgrade pip
+
+安装scrapy django numpy scipy matplotlib pandas
+pip3 install xxxx
+
+安装pycharm
+下载pycharm的压缩包，归档解压即可
+
+
+
