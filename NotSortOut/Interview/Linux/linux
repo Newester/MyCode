@@ -1,0 +1,28 @@
+Linux开机流程{
+	BIOS上电自检
+	引导装载程序（GRUB2）
+	内核初始化
+	启动systemd
+	启动系统服务
+	启动shell终端
+}
+
+Linux关机命令{
+	halt
+	sudo shotdown -h now
+	poweroff
+	init 0
+	  重启命令：
+	reboot
+	sudo shotdown -r now
+	init 1 
+}
+
+Linux系统服务{
+	RPM安装的服务{
+		独立管理的服务
+		统一管理的服务
+	}
+	源码自带的服务
+}
+z
