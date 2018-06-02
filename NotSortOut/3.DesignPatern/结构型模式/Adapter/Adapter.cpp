@@ -5,9 +5,6 @@
  *＠details 适配器模式分为类适配器模式与对象适配器模式.
 */
 
-#ifndef __ADAPTER_H__
-#define __ADAPTER_H__
-
 #include <iostream>
 
 using namespace std;
@@ -92,7 +89,3 @@ int main(int argc, char* argv[]) {
 
 	return 0;
 }
-
-
-
-#endif // __ADAPTER_H__
