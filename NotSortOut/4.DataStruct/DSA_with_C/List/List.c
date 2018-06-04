@@ -1,4 +1,4 @@
-#include "list.h"
+#include "List.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,7 +13,7 @@ ListNode* List_Init(void) {
 			break;
 		ListNode* p = (ListNode*)malloc(sizeof(*p));
 		if(NULL == p) {
-			perror("List_Init fail as malloc fail");
+			perror("List_Init failed as malloc failed");
 			if(NULL != head)
 				List_Destroy(head);
 			prev = p = NULL;

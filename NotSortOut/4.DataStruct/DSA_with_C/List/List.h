@@ -1,7 +1,7 @@
 #ifndef __LIST_H__
 #define __LIST_H__
 
-#include "PublicDefine.h"
+#include "../PublicDefine.h"
 
 typedef char DataType;
 
