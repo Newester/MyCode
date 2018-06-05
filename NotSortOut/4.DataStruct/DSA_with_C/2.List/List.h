@@ -35,9 +35,9 @@ typedef struct Node {
 	DataType data;
 	struct Node* prev;
 	struct Node* next;
-}
+}DoubleListNode;
 
-//初始化一个链表,由于数据类型这里定义为char，因此比较方便读取用户输入
+//初始化一个链表,数据类型这里定义为char，因此比较方便读取用户输入
 ListNode* List_Init(void);
 
 //插入元素，前插法
@@ -57,4 +57,7 @@ void List_DeleteElem(ListNode* head,DataType data);
 
 //链表反转，面试常考
 Status List_Reverse(ListNode* head);
+
+//销毁链表
+void ListDestory(ListNode* head);
 #endif // __LIST_H__

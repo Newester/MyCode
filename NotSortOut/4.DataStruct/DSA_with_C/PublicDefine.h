@@ -1,5 +1,5 @@
-#ifndef __PUBLIC_H__
-#define __PUBLIC_H__
+#ifndef __PUBLICDEFINE_H__
+#define __PUBLICDEFINE_H__
 
 #define TRUE         1
 #define FALSE        0
@@ -9,4 +9,4 @@
 #define OVERFLOW    -2
 typedef int Status;
 typedef (void*) DataType;
-#endif
+#endif // __PUBLICDEFINE_H__
