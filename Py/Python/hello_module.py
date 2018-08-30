@@ -16,3 +16,6 @@ def test():
 
 if __name__ == '__main__': #只有命令行运行时才能会执行这段代码，或者直接调用hello_module.test()
     test()
+class Hello(object):
+    def hello(self,name='world'):
+        print('Hello, %s' % name)

@@ -36,7 +36,7 @@ class Gender(Enum):
     Male = 0
     Female = 1
 
-class Student(objcet):
+class Student(object):
     def __init__(self,name,gender):
         if(isinstance(gender,Gender)):
             self.name = name
