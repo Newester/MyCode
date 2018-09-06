@@ -47,7 +47,16 @@ print(re.match(r'^(\d+?)(0*)$','102300').groups())
 re_telephone = re.compile(r'^(\d{3})-(\d{3,8})$')
 print(re_telephone.match('010-12345').groups())
 
+# practice
 
+def name_of_email(addr):
+    res = re.match(r'^(\w[\w|-|_]*)@(\w+).([A-za-z]+)$',addr)
+    if res:
+        return res.group(0)
+    else:
+        return None
+assert(name_of_email('hello@qq.com')) == 'hello@qq.com'
+print('OK')
 
 
 
