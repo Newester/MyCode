@@ -40,7 +40,7 @@ int main(int argc, char* argv[]) {
 
     while(1) {
         connect_fd = accept(socket_fd, (struct sockaddr*)NULL, NULL);
-        if(-1 == connect_fd) {
+        if(-1 == connect_fd) { 
             printf("accept socket error: %s(errno:%d)\n", strerror(errno), errno);
             continue;
         }
