@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "Stack.h"
 
 Status Stack_Create(Stack* s,unsigned int capacity) {
-	if(NULL !== s || 0 == capacity)
+	if(NULL != s || 0 == capacity)
 		return ERROR;
 	s = (Stack*)malloc(sizeof(Stack));
 	if(NULL == s) {
@@ -25,7 +26,7 @@ Status Stack_Destroy(Stack *s) {
 		return ERROR;
 	}
 	free(s->array);
-	array = NULL;
+	s->array = NULL;
 	free(s);
 	return OK;
 }
@@ -65,8 +66,7 @@ Status Stack_Push(ElementType elem, Stack *s) {
 		perror("Push failed because stack is full");
 		return ERROR;
 	}
-	s->top++ = elem;
-	s->size++;
+	s->array[s->top++] = elem;
 	return OK;
 }
 Status Stack_Pop(Stack *s)
@@ -81,7 +81,6 @@ Status Stack_Pop(Stack *s)
 		return ERROR;
 	}
 	s->top--;
-	s->size--;
 }
 
 Status Stack_GetTop(Stack* s, ElementType* container)
@@ -98,6 +97,5 @@ Status Stack_PopAndGetTop(Stack* s, ElementType* container) {
 	}
 	*container = s->top;
 	s->top--;
-	s->size--;
 	return OK;
 }

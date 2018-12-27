@@ -56,7 +56,7 @@ Status DynamicArray_Enlarge(DynamicArray* arr) {
 		perror("DynamicArray_Enlarge failed as calloc failed");
 		return ERROR;
 	}
-	memcpy(newArray, arr->array, (arr->size) * (sizeof(ElementType));
+	memcpy(newArray, arr->array, (arr->size) * sizeof(ElementType));
 	free(arr->array);
 	arr->array = newArray;
 	newArray = NULL;
@@ -75,7 +75,7 @@ Status DynamicArray_AddElem(DynamicArray* arr, ElementType elem) {
 			perror("DynamicArray_AddElem failed as DynamicArray_Enlarge failed");
 			return ERROR;
 		}
-		arr->array[array->size] = elem;
+		arr->array[arr->size] = elem;
 		arr->size++;
 		return OK;
 	}
@@ -119,11 +119,11 @@ Status DynamicArray_DeleteElemByIndex(DynamicArray* arr, unsigned int index) {
 	//ElementType需要是基本数据类型，如不是此处需memcpy
 	if(index != arr->size -1) {
 		int i = index;
-		while(i != size -1) {
+		while(i != arr->size -1) {
 			arr->array[i] = arr->array[i+1];
 		}
-		arr->array[size -1] = 0;
-		array->size--;
+		arr->array[arr->size -1] = 0;
+		arr->size--;
 	}
 	return OK;
 }
@@ -133,7 +133,7 @@ void DynamicArray_Traverse(DynamicArray* arr) {
 		perror("DynamicArray does not exist");
 		return;
 	}
-	int i = array->size;
+	int i = arr->size;
 	while(0 != i) {
 		//此处由于ElementType被定义为int，故可以这样输出，如为其他情况需要另外实现
 		printf("%d\t",arr->array[i-1]);

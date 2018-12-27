@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sepro/mygithub/MyCode/NotSortOut/1.OperatingSystem/linux/multi_threading/native/pthread_main.cpp
+stdio.h
+-
+string.h
+-
+iostream
+-
+signal.h
+-
+unistd.h
+-
+pthread_module.h
+/home/sepro/mygithub/MyCode/NotSortOut/1.OperatingSystem/linux/multi_threading/native/pthread_module.h
+
+/home/sepro/mygithub/MyCode/NotSortOut/1.OperatingSystem/linux/multi_threading/native/pthread_module.cpp
+stdio.h
+-
+iostream
+-
+sys/types.h
+-
+sys/ipc.h
+-
+pthread.h
+-
+pthread_module.h
+/home/sepro/mygithub/MyCode/NotSortOut/1.OperatingSystem/linux/multi_threading/native/pthread_module.h
+
+/home/sepro/mygithub/MyCode/NotSortOut/1.OperatingSystem/linux/multi_threading/native/pthread_module.h
+string.h
+-
+semaphore.h
+-
+

@@ -1,7 +1,7 @@
-#include "List.h"
-
 #include <stdio.h>
 #include <stdlib.h>
+
+#include "List.h"
 
 ListNode* List_Init(void) {
 	printf("Please input your data end by '#':\n");
@@ -89,11 +89,11 @@ Status List_FindElem(ListNode* head, DataType data, DataType* container) {
 	}
 	else {
 		*container = head->data;
-		return true;
+		return TRUE;
 	}
 }
 
-void Traverse(ListNode* head) {
+void List_Traverse(ListNode* head) {
 	while(NULL != head) {
 		printf("%c\t",head->data);
 		head = head->next;

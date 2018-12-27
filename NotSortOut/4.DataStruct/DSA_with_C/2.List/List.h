@@ -13,7 +13,7 @@ typedef char DataType;
 typedef struct node {
 	DataType data;
 	struct node* next;
-}ListNode;
+} ListNode;
 
 /**
  *链表头节点，当前实现的链表没有加入此节点
@@ -23,7 +23,7 @@ typedef struct node {
 typedef struct {
 	ListNode* first;
 	int length;
-}List;
+} List;
 
 /**
  *双向链表节点
@@ -35,28 +35,28 @@ typedef struct Node {
 	DataType data;
 	struct Node* prev;
 	struct Node* next;
-}DoubleListNode;
+} DoubleListNode;
 
 //初始化一个链表,数据类型这里定义为char，因此比较方便读取用户输入
 ListNode* List_Init(void);
 
 //插入元素，前插法
-Status List_ForeInsert(ListNode* head, DataType data);
+ListNode* List_ForeInsert(ListNode* head, DataType data);
 
 //插入元素，尾插法
 Status List_BackInsert(ListNode* tail, DataType data);
 
 //查找特定的元素
-Status List_FindElem(ListNode* head, DataType data);
+Status List_FindElem(ListNode* head, DataType data, DataType* container);
 
 //遍历链表
-void List_Travese(ListNode* head);
+void List_Traverse(ListNode* head);
 
 //删除特定的元素
-void List_DeleteElem(ListNode* head,DataType data);
+Status List_DeleteElem(ListNode* head,DataType data);
 
 //链表反转，面试常考
-Status List_Reverse(ListNode* head);
+ListNode* List_Reverse(ListNode* head);
 
 //销毁链表
 void ListDestory(ListNode* head);
