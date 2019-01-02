@@ -1,4 +1,4 @@
-#ifdef __QUEUE_H__
+#ifndef __QUEUE_H__
 #define __QUEUE_H__
 
 #include "../PublicDefine.h"
@@ -7,10 +7,10 @@ typedef int ElementType;
 
 typedef struct node {
 	ElementType data;
-	node* next;
+	struct node* next;
 } QueueNode;
 
-typdef struct {
+typedef struct {
 	QueueNode* front;
 	QueueNode* rear;
 	unsigned int size;

@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "Queue.h"
 
 Queue* Queue_Init(void) {
 	Queue* queue = (Queue*)malloc(sizeof(Queue));
@@ -111,7 +112,7 @@ Status Queue_DeQueue(Queue* queue, ElementType* container) {
 	else {
 		QueueNode* node = queue->front;
 		queue->front = node->next;
-		node-next = NULL;
+		node->next = NULL;
 		free(node);
 		node = NULL;
 	}

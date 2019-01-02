@@ -59,7 +59,7 @@ HashTable* HashTable_Create() {
 	return ht;
 }
 
-void HashTable_Destory() {
+void HashTable_Destory(HashTable* ht) {
 	if( NULL != ht ) {
 		if( NULL != ht->table ) {
 			int i = 0;
@@ -89,10 +89,10 @@ int HashTable_Put2(HashTable* ht, char* key, void* value, void(*free_value)(void
 				p->free_value(p->value);
 			}
 			p->value = value;
-			p->free_value = free_value();
+			p->free_value = free_value;
 			break;
 		}
-		prep = p;
+		pre = p;
 		p = p->next;
 	}
 
