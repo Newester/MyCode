@@ -1,0 +1,53 @@
+一、数据结构与算法
+1、快速排序
+2、冒泡排序、堆排序、桶排序
+2、二分查找
+3、链表：链表插删、有环无环、反转
+4、基础函数：memeory string
+5、哈希表:哈希检测、常用哈希函数、哈希冲突、实现机制
+6、AVL树：特性，左右旋转、插入删除
+7、B树：特性，插入删除、应用场景
+8、红黑树
+
+二、C++基础
+1、virtual 虚表
+2、static 关键字
+3、auto
+4、foreach
+5、右值引用和移动语义
+6、智能指针
+7、线程库 std::thread std::mutex std::condition_variable std::lock_guard
+8、lambda
+9、std::bind std::function
+
+三、网络通信
+1、TCP/IP协议层级关系
+2、三次握手、四次挥手的细节
+3、流量拥塞控制
+4、TCP/IP帧格式
+5、非阻塞socket
+6、异步connect
+7、select
+8、epoll与select的区别、边缘模式、水平模式
+9、scoket选项、nagle、keepalive、linger
+10、TCP与UDP的区别与应用场景
+11、通信协议如何设计避免粘包
+12、HTTP get/post的区别
+13、http协议格式
+14、IOCP
+
+四、操作系统原理
+1、Linux下elf文件结构
+2、进程地址空间
+3、保护模式、实模式
+4、daemon进程、僵尸进程
+5、堆栈，函数参数入栈顺序
+6、线程同步技术：互斥体、信号量、条件变量，死锁与避免死锁
+7、进程间通信技术：共享内存、匿名、具名管道、socket、消息队列
+
+五、数据库
+1、MySQL
+2、Redis
+
+六、项目经验
+
