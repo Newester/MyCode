@@ -47,7 +47,7 @@ public:
 		if(m_indexCurrent < m_aggregate->Count()) {
 			ret = m_aggregate->Pop(m_indexCurrent);
 		}
-		return ret;
+		re!turn ret;
 	}
 	string GetCur() {
 		return m_aggregate->Pop(m_indexCurrent);

@@ -1,9 +1,10 @@
 #include "BinaryTree.h"
+#include "../4.Queue/Queue.h"
 
 Status BinTree_Create(BinNode* root) {
 	ElementType ch;
 	scanf("%c",&ch);
-	if(' ' == ch) {
+	if('#' == ch) {
 		root = NULL;
 	}
 	else {
@@ -52,27 +53,46 @@ void Visit(ElementType e) {
 	print("%c\t",e);
 }
 
-void BinNode_PreOrderTraverse(BinNode* root, void(*Visit)(ElementType e)) {
+void BinTree_PreOrderTraverse(BinNode* root, void(*Visit)(ElementType e)) {
 	if(NULL != root) {
 		Visit(root->data);
-		BinNode_PreOrderTraverse(root->left,Visit);
-		BinNode_PreOrderTraverse(root->right,Visit);
+		BinTree_PreOrderTraverse(root->left,Visit);
+		BinTree_PreOrderTraverse(root->right,Visit);
     }
 }
 
-void BinNode_InOrderTraverse(BinNode* root, void(*Visit)(ElementType e)) {
-	if(NULL !== root) {
-		BinNode_InOrderTraverse(root->left,Visit);
+void BinTree_InOrderTraverse(BinNode* root, void(*Visit)(ElementType e)) {
+	if(NULL != root) {
+		BinTree_InOrderTraverse(root->left,Visit);
 		Visit(root->data);
-		BinNode_InOrderTraverse(root->right,Visit);
+		BinTree_InOrderTraverse(root->right,Visit);
 	}
 }
 
-void BinNode_PostOrderTraverse(BinNode* root, void(*Visit)(ElementType e)) {
+void BinTree_PostOrderTraverse(BinNode* root, void(*Visit)(ElementType e)) {
 	if(NULL != root) {
-		BinNode_PostOrderTraverse(root->left,Visit);
-		BinNode_PostOrderTraverse(root->right,Visit);
+		BinTree_PostOrderTraverse(root->left,Visit);
+		BinTree_PostOrderTraverse(root->right,Visit);
 		Visit(root->data);
+	}
+}
+
+void BinTree_LevelOrderTraverse(BinNode* root, void(*Visit)(ElementType e)) {
+	if(NULL != root) {
+		Queue* queue = Queue_Init();
+		ElementType data;
+		BinNode* p = root;
+		Queue_EnQueue(queue, p);
+		while(TRUE != Queue_IsEmpty(queue)) {
+			Queue_DeQueue(queue, p);
+			Visit(p->data);
+			if(NULL != root->left) {
+				Queue_EnQueue(queue, root->left);
+			}
+			if(NULL != root->right) {
+				Queue_EnQueue(queue, root->right);
+			}
+		}
 	}
 }
 
@@ -97,4 +117,22 @@ BinNode* BinTree_FindNode(BinNode* root,ElementType e) {
 	}
 	return NULL;
 
+}
+
+void BinTree_Destroy(BinNode* root) {
+
+	if(NULL != root) {
+		if(NULL != root->left) {
+			BinTree_Destroy(root->left);
+			root->left = NULL;
+		}
+		if(NULL != root->right) {
+			BinTree_Destroy(root->right);
+			root->right = NULL;
+		}
+		if (NULL != root){
+			free(root);
+			root = NULL;
+		}
+	}
 }

@@ -30,7 +30,7 @@ public:
 	virtual Product* Create() = 0;
 };
 
-class Factory1 : pu{blic Factory1 {
+class Factory1 : public Factory1 {
 	Product* Create() {
 		return new Product1();
 	}
@@ -38,7 +38,7 @@ class Factory1 : pu{blic Factory1 {
 
 class Factory2 : public Factory {
 	Product* Create() {
-		retutrn new Product2();
+		return new Product2();
 	}
 };
 
